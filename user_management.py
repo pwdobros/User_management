@@ -10,17 +10,14 @@ def add_user(user_data):
 
 def save_users_to_file(users):
 
-def validate_nip(nip):
-    list = []
+def validate_nip(nip): #Input must be a string
     "Check if NIP is correct"
+    list = []
     if not len(nip) != 10:
         for i in range(9):
-            z = int(nip[i])
-            x = z * NIP_WEIGHT[i]
+            x = int(nip[i]) * NIP_WEIGHT[i]
             list.append(x)
-        mlp = sum(list) % 11
-        last_number = int(nip[9])
-        if mlp == last_number:
+        if (sum(list) % 11) == int(nip[9]):
             return True
         else:
             return False
@@ -28,6 +25,11 @@ def validate_nip(nip):
         return False
             
 def validate_pesel(pesel):
+    "Checks if pesel is correct"
+    list = []
+    pesel()
+    if not len(pesel) != 11:
+
     
 
 

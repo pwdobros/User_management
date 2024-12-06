@@ -4,19 +4,15 @@ import re
 import os
 
 NIP_WEIGHT = [6, 5, 7, 2, 3, 4 ,5 ,6 ,7]
-cos = str(8842360401)
 
-def validate_nip(nip):
-    list = []
+def validate_nip(nip): #Input must be a string
     "Check if NIP is correct"
+    list = []
     if not len(nip) != 10:
         for i in range(9):
-            z = int(nip[i])
-            x = z * NIP_WEIGHT[i]
+            x = int(nip[i]) * NIP_WEIGHT[i]
             list.append(x)
-        mlp = sum(list) % 11
-        last_number = int(nip[9])
-        if mlp == last_number:
+        if (sum(list) % 11) == int(nip[9]):
             return True
         else:
             return False
@@ -29,7 +25,7 @@ def validate_nip(nip):
 
 
 
-wynik = validate_nip(cos)
+wynik = validate_nip(str(8842360401))
 
 print (wynik)
 
