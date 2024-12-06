@@ -4,11 +4,7 @@ import re
 import os
 
 NIP_WEIGHT = [6, 5, 7, 2, 3, 4 ,5 ,6 ,7]
-
-def add_user(user_data):
-    
-
-def save_users_to_file(users):
+cos = str(8842360401)
 
 def validate_nip(nip):
     list = []
@@ -27,9 +23,14 @@ def validate_nip(nip):
     else:
         return False
             
-def validate_pesel(pesel):
-    
 
 
-def validate_regon(regon):
 
+
+
+
+wynik = validate_nip(cos)
+
+print (wynik)
+
+            
