@@ -26,9 +26,11 @@ def validate_nip(nip): #Input must be a string
             
 def validate_pesel(pesel):
     "Checks if pesel is correct"
-    list = []
-    pesel()
-    if not len(pesel) != 11:
+    if len(pesel) != 11 or not pesel.isdigit():
+        return False
+    year = int(pesel[0:2])
+    month = int(pesel[2:4])
+    day = int(pesel[4:6])
 
     
 
