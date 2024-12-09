@@ -86,7 +86,7 @@ def validate_regon(regon): #Input must be a string
 
         
 piesel = ("05242008452")
-wynik2 = validate_regon("911349795")
+wynik2 = validate_regon(str(input("Coś tamcoś")))
 print (wynik2)
 
 
