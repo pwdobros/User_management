@@ -5,6 +5,8 @@ import os
 
 NIP_WEIGHT = [6, 5, 7, 2, 3, 4 ,5 ,6 ,7]
 PESEL_WEIGHT = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
+REGON_WEIGHT9 = [8, 9, 2, 3, 4, 5, 6, 7]
+REGON_WEIGHT14 = [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8]
 
 def validate_nip(nip): #Input must be a string
     "Check if NIP is correct"
@@ -26,10 +28,6 @@ def validate_nip(nip): #Input must be a string
 
 
 
-wynik = validate_nip(str(8842360401))
-
-print (wynik)
-
 def validate_pesel(pesel): #Input must be a string
     "Checks if pesel is correct"
     list = []
@@ -50,13 +48,48 @@ def validate_pesel(pesel): #Input must be a string
         return True
     else:
         return False
+    
+def validate_regon(regon): #Input must be a string
+    "Checks if regon is correct"
+    list = []
+    if len(regon) != 9 and len(regon) != 14:
+        return False
+    else:
+        if len(regon) == 9:
+            for i in range(len(regon) - 1):
+                x = int(regon[i]) * REGON_WEIGHT9[i]
+                list.append(x)
+            if (sum(list) % 11) == 10:
+                control = 0
+            else:
+                control = sum(list) % 11
+            if int(regon[8]) == int(control):
+                return True
+            else:
+                return False
+        if len(regon) == 14:
+            for i in range(len(regon) - 1):
+                x = int(regon[i]) * REGON_WEIGHT14[i]
+            control = x % 11
+            if int(regon[13]) == int(control):
+                return True
+            else:
+                return False
+
+        
+            
+        
+
+
 
 
 
         
 piesel = ("05242008452")
-wynik2 = validate_pesel("05242008452")
+wynik2 = validate_regon("911349795")
 print (wynik2)
+
+
 
 
             
