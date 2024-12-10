@@ -67,7 +67,3 @@ Program sprawdza poprawność danych użytkownika przed ich dodaniem. Oto zasady
 5. **Szkolenie użytkowników**: Edukuj użytkowników o zasadach bezpieczeństwa, aby zmniejszyć ryzyko kradzieży danych.
 
 6. **Użyj szyfrowania**: Zastosuj szyfrowanie dla danych w czasie przechowywania oraz w czasie przesyłania.
-
-## Licencja
-
-Ten projekt jest udostępniony na licencji MIT. Szczegóły można znaleźć w pliku LICENSE.
